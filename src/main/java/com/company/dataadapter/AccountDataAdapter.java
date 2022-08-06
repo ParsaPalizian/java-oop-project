@@ -278,6 +278,10 @@ public class AccountDataAdapter {
         if (account.getBio() != null) {
             sql += String.format("bio  = '%s'  ,", account.getBio());
         }
+        if (account.getAvatar() != null) {
+            sql += String.format("avatar  = '%s'  ,", account.getAvatar());
+        }
+
         sql += String.format("business  = '%d'  ,", account.isBusiness() ? 1 : 0);
         sql += String.format("private  = '%d'  ,", account.isPrivate() ? 1 : 0);
 

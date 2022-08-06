@@ -93,7 +93,7 @@ public class Account implements Printable, Editable<Account> {
         this.privateMessages = privateMessages;
     }
 
-    public Account(String firstName, String lastName, String userName, String email, String password,  String forgetPasswordQuestion, String forgetPasswordAnswer) {
+    public Account(String firstName, String lastName, String userName, String email, String password, String forgetPasswordQuestion, String forgetPasswordAnswer) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
@@ -101,7 +101,7 @@ public class Account implements Printable, Editable<Account> {
         this.password = password;
     }
 
-    public Account(String firstName, String lastName, String userName, String email, String password,  String forgetPasswordQuestion, String forgetPasswordAnswer , String avatar) {
+    public Account(String firstName, String lastName, String userName, String email, String password, String forgetPasswordQuestion, String forgetPasswordAnswer, String avatar) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
@@ -111,6 +111,10 @@ public class Account implements Printable, Editable<Account> {
 
     }
 
+    public void changeAvatar() throws SQLException {
+        AccountDataAdapter adapter = new AccountDataAdapter();
+        adapter.update(this);
+    }
 
     public Account() {
     }
@@ -383,7 +387,7 @@ public class Account implements Printable, Editable<Account> {
 
     public static Result signUp(String firstname, String lastName, String userName, String password, String email, String forgetPasswordQuestion, String forgetPasswordAnswer) throws Exception {
         AccountDataAdapter accountDataAdapter = new AccountDataAdapter();
-        accountDataAdapter.insert(new Account(firstname, lastName, userName, email, password,forgetPasswordQuestion,forgetPasswordAnswer));
+        accountDataAdapter.insert(new Account(firstname, lastName, userName, email, password, forgetPasswordQuestion, forgetPasswordAnswer));
 
         return null;
     }
@@ -692,66 +696,66 @@ public class Account implements Printable, Editable<Account> {
     }
 
     public static Result findBaseOnUserName(String userName) throws SQLException {
-        AccountDataAdapter adapter=new AccountDataAdapter();
-        Account account =adapter.findBaseOnUserName(userName);
+        AccountDataAdapter adapter = new AccountDataAdapter();
+        Account account = adapter.findBaseOnUserName(userName);
 
-        Result result=new Result();
+        Result result = new Result();
         result.setError(false);
         result.setData(account);
         return result;
     }
 
     public static Result updatePassword(Account account) throws SQLException {
-        AccountDataAdapter adapter=new AccountDataAdapter();
+        AccountDataAdapter adapter = new AccountDataAdapter();
         adapter.update(account);
 
-        Result result=new Result();
+        Result result = new Result();
         result.setError(false);
         return result;
     }
 
     public static Result updateIsBusiness(Account account) throws SQLException {
-        AccountDataAdapter adapter=new AccountDataAdapter();
+        AccountDataAdapter adapter = new AccountDataAdapter();
         adapter.update(account);
 
-        Result result=new Result();
+        Result result = new Result();
         result.setError(false);
         return result;
     }
 
     public static Result updateIsPrivate(Account account) throws SQLException {
-        AccountDataAdapter adapter=new AccountDataAdapter();
+        AccountDataAdapter adapter = new AccountDataAdapter();
         adapter.update(account);
 
-        Result result=new Result();
+        Result result = new Result();
         result.setError(false);
         return result;
     }
 
     public static Result clearSearchedHistory(Account account) throws SQLException {
-        AccountDataAdapter adapter=new AccountDataAdapter();
+        AccountDataAdapter adapter = new AccountDataAdapter();
         adapter.clearSearchedHistory(account.getId());
 
-        Result result=new Result();
+        Result result = new Result();
         result.setError(false);
         return result;
     }
 
-    public static Result deleteFromSearchHistory(Account searcherAccount,Account searchedAccounts) throws SQLException {
-        AccountDataAdapter adapter=new AccountDataAdapter();
-        adapter.deleteFromSearchHistory(searcherAccount.getId(),searchedAccounts.getId());
+    public static Result deleteFromSearchHistory(Account searcherAccount, Account searchedAccounts) throws SQLException {
+        AccountDataAdapter adapter = new AccountDataAdapter();
+        adapter.deleteFromSearchHistory(searcherAccount.getId(), searchedAccounts.getId());
 
 
-        Result result=new Result();
+        Result result = new Result();
         result.setError(false);
         return result;
     }
 
-    public static Result didAnswerMatch(Account account,String forgotPasswordAnswer) throws SQLException {
-        AccountDataAdapter adapter=new AccountDataAdapter();
-        int count =adapter.count(new String[]{"account_id","forgot_Password_Answer"}, new String[]{account.getId()+"",forgotPasswordAnswer});
+    public static Result didAnswerMatch(Account account, String forgotPasswordAnswer) throws SQLException {
+        AccountDataAdapter adapter = new AccountDataAdapter();
+        int count = adapter.count(new String[]{"account_id", "forgot_Password_Answer"}, new String[]{account.getId() + "", forgotPasswordAnswer});
 
-        Result result=new Result();
+        Result result = new Result();
         result.setError(false);
         result.setData(count);
         return result;

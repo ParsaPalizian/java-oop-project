@@ -135,6 +135,7 @@ public class CenterPanel extends JPanel {
                             case HOME:
                                 CenterPanel.this.removeAll();
                                 HomePanel homePanel = new HomePanel(Globals.currentAccount);
+                                GuiGlobals.mainFrame.activeCenterPanel = homePanel;
                                 CenterPanel.this.add(homePanel);
                                 CenterPanel.this.revalidate();
                                 break;

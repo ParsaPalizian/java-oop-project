@@ -1,0 +1,93 @@
+package com.company.helper;
+
+import com.company.global.Globals;
+import com.company.launcher.Main;
+import com.company.model.Account;
+import com.company.model.Comment;
+import com.company.utility.PrintUtility;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+public class ExplorerPostsMenuHelper {
+    public static void printExplorerPosts() {
+        //todo
+        System.out.println("EXPLORER_POSTS MENU");
+        System.out.println("1- React");
+        System.out.println("2- Comment");
+        System.out.println("3- Share");
+        System.out.println("4- Next");
+        System.out.println("5- Previous");
+        System.out.println("1- Open Account");
+        System.out.println("0- Back");
+    }
+
+    public static void performExplorerPostsCommand(String command) throws SQLException {
+        try {
+            int intComm = Integer.parseInt(command);
+            switch (intComm) {
+                case 1: {
+                    System.out.println("enter postId :");
+                    String postId = Main.scanner.nextLine();
+
+                    System.out.println("choose reactType");
+                    System.out.println("1- ");
+                    System.out.println("2- ");
+                    System.out.println("3- ");
+                    System.out.println("4- ");
+                    System.out.println("5- ");
+                    System.out.println("6- ");
+                    System.out.println("7- ");
+                    System.out.println("8- ");
+                    System.out.println("9- ");
+                    System.out.println("10- ");
+                    String reactType = Main.scanner.nextLine();
+
+//                    Account.react(Globals.currentAccount, null, null);
+                    break;
+                }
+                case 2: {
+                    System.out.println("enter postId :");
+                    String postId = Main.scanner.nextLine();
+
+                    System.out.println("enter your comment :");
+                    String postComment = Main.scanner.nextLine();
+
+                    Comment.comment( null, null);
+                    break;
+                }
+                case 3: {
+                    System.out.println("enter postId :");
+                    String postId = Main.scanner.nextLine();
+
+                    System.out.println("enter receiversId");
+                    ArrayList<Integer> receiversId = new ArrayList<>();
+                    //todo getReceiversId
+
+                    Account.share(Globals.currentAccount, null, null);
+                    break;
+                }
+                case 4: {
+                    //TODO NEXT;
+                    break;
+                }
+                case 5: {
+                    //TODO PREVIOUS;
+                    break;
+                }
+                case 6: {
+                    //TODO level=???
+                    break;
+                }
+                case 0: {
+                    Globals.menuLevels.pop();
+
+                    break;
+                }
+            }
+        }catch (Exception ex){
+            PrintUtility.printlnFail("Please Enter Correct Number");
+        }
+    }
+
+}

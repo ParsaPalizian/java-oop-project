@@ -1,0 +1,5 @@
+primary     2, 48, 71
+primary variant 54, 89, 115
+
+secondary  255, 183, 3
+secondary variant 255, 233, 78

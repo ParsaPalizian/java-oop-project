@@ -1,0 +1,11 @@
+MAIN
+
+1- Home
+2- Timeline
+3- Explorer
+4- Search
+5- View Profile
+6- Edit Profile
+7- Change Account Type
+8- Change Private Or Open Account Type
+0- Logout

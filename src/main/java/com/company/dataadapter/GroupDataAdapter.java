@@ -61,8 +61,26 @@ public class GroupDataAdapter {
         new GroupMessageDataAdapter().delete(new String[][]{{"group_id", Id + ""}});
     }
 
-    public Group update(Group group) {
-        return null;
+    public Group update(Group group) throws SQLException {
+        if (!dbHelper.isConnected()) {
+            dbHelper = new DatabaseHelper();
+            dbHelper.connect();
+        }
+
+        String sql = String.format("UPDATE %s SET  creator_id= %d ,`name`= '%s',bio = '%s',profile_picture = '%s',link = '%s' WHERE id = %d ",
+                TABLE_NAME,
+                group.getCreator().getId(),
+                group.getName(),
+                group.getBio(),
+                group.getProfilePicture(),
+                group.getLink(),
+                group.getId()
+        );
+        dbHelper.execute(sql);
+        dbHelper.disconnect();
+        dbHelper.setConnection(null);
+        return group;
+
     }
 
     public ArrayList<GroupDataAdapter> findAll() {

@@ -9,6 +9,10 @@ import com.company.gui.enums.CenterMenuSituation;
 import com.company.gui.enums.MainMenuSituation;
 import com.company.gui.enums.TopMenuSituation;
 import com.company.gui.global.GuiGlobals;
+import com.company.gui.part.panel.CreateGroupPanel;
+import com.company.gui.part.panel.GroupsPanel;
+import com.company.model.Group;
+import com.company.utility.FileUtility;
 
 import javax.swing.*;
 import java.awt.*;
@@ -37,8 +41,10 @@ public class TopPanel extends JPanel {
     IconButton btnGroupBack;
     IconButton btnGroupSave;
 
+
     IconButton btnGroupRemove;
     IconButton btnGroupLeave;
+    IconButton btnGroupChangeAvatar;
 
 
     public TopMenuSituation currentMenuSituation = TopMenuSituation.NONE;
@@ -63,6 +69,18 @@ public class TopPanel extends JPanel {
         this.add(rightPanel, BorderLayout.EAST);
 
         btnProfile = new ImageButton("assets\\profiles\\general.png", new Dimension(64, 64));
+        btnProfile.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                GuiGlobals.mainFrame.centerPanel.rendered = false;
+                GuiGlobals.mainFrame.centerPanel.currentSituationCenterPanel = CenterMenuSituation.HOME;
+
+
+            }
+        });
+
+
         leftPanel.add(btnProfile);
 
         btnChangeColor = new IconButton(
@@ -218,6 +236,41 @@ public class TopPanel extends JPanel {
         });
         midPanel.add(btnGroupLeave);
 
+        btnGroupChangeAvatar = new IconButton(
+                GuiSetting.selectedIconSet.action.changeAvatar,
+                64,
+                GuiSetting.selectedTheme.getSecondaryColor(),
+                GuiSetting.selectedTheme.getSecondaryVariantColor()
+        );
+        btnGroupChangeAvatar.setToolTipText("CHANGE AVATAR");
+        btnGroupChangeAvatar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                JFileChooser fileChooser = new JFileChooser();
+                fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+                int result = fileChooser.showOpenDialog(TopPanel.this);
+                if (result == JFileChooser.APPROVE_OPTION) {
+
+                    try {
+
+                        File selectedFile = fileChooser.getSelectedFile();
+                        String path = selectedFile.getAbsolutePath();
+                        if (GuiGlobals.mainFrame.activeCenterPanel instanceof GroupsPanel) {
+                            String newPath = FileUtility.copyGroupAvatarImage(path);
+                            ((GroupsPanel) GuiGlobals.mainFrame.activeCenterPanel).selectedGroup.setProfilePicture(newPath);
+                            ((GroupsPanel) GuiGlobals.mainFrame.activeCenterPanel).selectedGroup.changeAvatar();
+                            GuiGlobals.mainFrame.centerPanel.rendered = false;
+
+                        }
+                    } catch (Exception ex) {
+                    }
+                }
+            }
+        });
+        midPanel.add(btnGroupChangeAvatar);
+
+
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
@@ -245,6 +298,7 @@ public class TopPanel extends JPanel {
                                 btnGroupBack.setVisible(false);
                                 btnGroupRemove.setVisible(false);
                                 btnGroupLeave.setVisible(false);
+                                btnGroupChangeAvatar.setVisible(false);
                                 break;
                             case GROUPS:
                                 btnGroupCreate.setVisible(true);
@@ -252,6 +306,7 @@ public class TopPanel extends JPanel {
                                 btnGroupBack.setVisible(false);
                                 btnGroupRemove.setVisible(false);
                                 btnGroupLeave.setVisible(false);
+                                btnGroupChangeAvatar.setVisible(false);
                                 break;
                             case CREATE_GROUP:
                                 btnGroupCreate.setVisible(false);
@@ -259,6 +314,7 @@ public class TopPanel extends JPanel {
                                 btnGroupBack.setVisible(true);
                                 btnGroupRemove.setVisible(false);
                                 btnGroupLeave.setVisible(false);
+                                btnGroupChangeAvatar.setVisible(false);
                                 break;
                             case SELECT_GROUP:
                                 btnGroupCreate.setVisible(false);
@@ -266,6 +322,7 @@ public class TopPanel extends JPanel {
                                 btnGroupBack.setVisible(true);
                                 btnGroupRemove.setVisible(true);
                                 btnGroupLeave.setVisible(true);
+                                btnGroupChangeAvatar.setVisible(true);
                                 break;
 
                         }

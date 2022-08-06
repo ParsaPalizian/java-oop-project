@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Objects;
 
-public class Group  implements Printable, Editable<Group> {
+public class Group implements Printable, Editable<Group> {
     private int id;
     private Account creator;
     private String name;
@@ -156,6 +156,12 @@ public class Group  implements Printable, Editable<Group> {
         group.setGroupMembers(groupMembers);
         Globals.currentAccount.getGroups().add(group);
         return null;
+    }
+
+    public void changeAvatar() throws SQLException {
+
+        GroupDataAdapter adapter = new GroupDataAdapter();
+        adapter.update(this);
     }
 
     public static Result addContent(GroupMessage groupMessage, Account account) {

@@ -9,7 +9,6 @@ import java.awt.*;
 
 public class MainFrame extends JFrame {
 
-
     public static TopPanel topPanel;
     public static LeftPanel leftPanel;
     public static RightPanel rightPanel;

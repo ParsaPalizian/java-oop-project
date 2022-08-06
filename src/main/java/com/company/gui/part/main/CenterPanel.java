@@ -1,5 +1,6 @@
 package com.company.gui.part.main;
 
+import com.company.global.Globals;
 import com.company.gui.assets.widget.BasePanel;
 import com.company.gui.configuration.GuiSetting;
 import com.company.gui.enums.CenterMenuSituation;
@@ -133,7 +134,7 @@ public class CenterPanel extends JPanel {
                                 break;
                             case HOME:
                                 CenterPanel.this.removeAll();
-                                HomePanel homePanel = new HomePanel();
+                                HomePanel homePanel = new HomePanel(Globals.currentAccount);
                                 CenterPanel.this.add(homePanel);
                                 CenterPanel.this.revalidate();
                                 break;

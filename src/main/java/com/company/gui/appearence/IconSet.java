@@ -82,6 +82,8 @@ public class IconSet {
         public Ikon back;
         public Ikon save;
         public Ikon remove;
+        public Ikon changeAvatar;
+
     }
 
 }

@@ -95,6 +95,7 @@ public class GuiSetting {
         materialDesignIconSet.action.back = Entypo.BACK;
         materialDesignIconSet.action.save = Entypo.SAVE;
         materialDesignIconSet.action.remove = MaterialDesign.MDI_ACCOUNT_REMOVE;
+        materialDesignIconSet.action.changeAvatar = MaterialDesign.MDI_KEY_CHANGE;
 
 
         fontAwesomeIconSet = new IconSet();

@@ -72,14 +72,13 @@ public class TopPanel extends JPanel {
         btnProfile.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                GuiGlobals.mainFrame.centerPanel.rendered = false;
-                GuiGlobals.mainFrame.centerPanel.currentSituationCenterPanel = CenterMenuSituation.HOME;
-
-
+                if (Globals.currentAccount != null) {
+                    Globals.currentAccount = Globals.loggedInAccount;
+                    GuiGlobals.mainFrame.centerPanel.rendered = false;
+                    GuiGlobals.mainFrame.centerPanel.currentSituationCenterPanel = CenterMenuSituation.HOME;
+                }
             }
         });
-
 
         leftPanel.add(btnProfile);
 
@@ -279,8 +278,8 @@ public class TopPanel extends JPanel {
 
                         if (Globals.currentAccount != null) {
                             btnLogout.setVisible(true);
-                            if (new File("assets\\profiles\\" + Globals.currentAccount.getAvatar()).exists()) {
-                                btnProfile.changeImage("assets\\profiles\\" + Globals.currentAccount.getAvatar());
+                            if (new File("assets\\profiles\\" + Globals.loggedInAccount.getAvatar()).exists()) {
+                                btnProfile.changeImage("assets\\profiles\\" + Globals.loggedInAccount.getAvatar());
                             } else {
                                 btnProfile.changeImage("assets\\profiles\\general.png");
                             }
@@ -324,7 +323,14 @@ public class TopPanel extends JPanel {
                                 btnGroupLeave.setVisible(true);
                                 btnGroupChangeAvatar.setVisible(true);
                                 break;
-
+                            default:
+                                btnGroupCreate.setVisible(false);
+                                btnGroupSave.setVisible(false);
+                                btnGroupBack.setVisible(false);
+                                btnGroupRemove.setVisible(false);
+                                btnGroupLeave.setVisible(false);
+                                btnGroupChangeAvatar.setVisible(false);
+                                break;
                         }
 
                         midPanel.revalidate();

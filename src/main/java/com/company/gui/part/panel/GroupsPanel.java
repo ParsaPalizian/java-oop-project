@@ -62,7 +62,7 @@ public class GroupsPanel extends BasePanel {
         this.add(scrGroups, BorderLayout.WEST);
         this.add(pnlMessageAndTypeAndSend, BorderLayout.CENTER);
 
-        for (Group group : Globals.currentAccount.getGroups()) {
+        for (Group group : Globals.loggedInAccount.getGroups()) {
 
 
             GroupItem groupItem = null;
@@ -78,7 +78,7 @@ public class GroupsPanel extends BasePanel {
 
         }
 
-        int h = Globals.currentAccount.getGroups().size() * 42;
+        int h = Globals.loggedInAccount.getGroups().size() * 42;
         pnlGroups.setPreferredSize(new Dimension(150, h));
 
         btnSend.addActionListener(new ActionListener() {

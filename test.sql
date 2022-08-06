@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : mysql
+ Source Server         : mine
  Source Server Type    : MySQL
- Source Server Version : 100417
+ Source Server Version : 100424
  Source Host           : localhost:3306
  Source Schema         : test
 
  Target Server Type    : MySQL
- Target Server Version : 100417
+ Target Server Version : 100424
  File Encoding         : 65001
 
- Date: 06/08/2022 00:56:04
+ Date: 06/08/2022 18:48:01
 */
 
 SET NAMES utf8mb4;
@@ -39,27 +39,27 @@ CREATE TABLE `accounts`  (
   `last_login` datetime NULL DEFAULT NULL,
   `registered_at` datetime NULL DEFAULT current_timestamp,
   PRIMARY KEY (`id`) USING BTREE,
-  UNIQUE INDEX `user_name_UNIQUE`(`username`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 34 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+  UNIQUE INDEX `user_name_UNIQUE`(`username` ASC) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 36 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of accounts
 -- ----------------------------
-INSERT INTO `accounts` VALUES (1, 0, 0, NULL, 'reza', 'rezaei', 'reza', NULL, 'reza@gmail.com', '2022-07-26', '1', 'xbsdg', 'xfbjxn', 'dbfngm', '2022-06-28 14:47:27', '2022-07-14 14:49:40');
-INSERT INTO `accounts` VALUES (2, 0, 0, NULL, 'ali', 'alinia', 'alip', NULL, 'ali1@gmail.com', '2022-07-06', '1', 'fdbgzfd', 'vxbncm', 'fxbngcm', '2022-07-19 14:47:30', '2022-07-28 14:49:35');
-INSERT INTO `accounts` VALUES (3, 0, 0, NULL, 'alireza', 'rezaei', 'mamad', NULL, 'reza@gmail.com', '2022-07-10', '1', 'fbb', 'vxcbcvnb', 'xbncb', '2022-07-03 14:47:35', '2022-07-04 14:49:31');
-INSERT INTO `accounts` VALUES (4, 0, 0, NULL, 'ahmad', 'alinia', 'arya', NULL, 'ali1@gmail.com', '2022-06-30', '1', 'fb', 'vcbcb', 'xbnvc', '2022-07-19 14:47:40', '2022-07-19 14:49:24');
-INSERT INTO `accounts` VALUES (5, 0, 0, NULL, 'hassan', 'hassani', 'parsaaaa', NULL, 'kami@yahoo.com', '2022-07-05', '1', 'bxcb', 'xvcv b', 'vn', '2022-07-22 14:47:46', '2022-07-10 14:49:19');
+INSERT INTO `accounts` VALUES (1, 0, 0, '1.png', 'reza', 'rezaei', 'reza', NULL, 'reza@gmail.com', '2022-07-26', '1', 'xbsdg', 'xfbjxn', 'dbfngm', '2022-06-28 14:47:27', '2022-07-14 14:49:40');
+INSERT INTO `accounts` VALUES (2, 0, 0, '2.png', 'ali', 'alinia', 'alip', NULL, 'ali1@gmail.com', '2022-07-06', '1', 'fdbgzfd', 'vxbncm', 'fxbngcm', '2022-07-19 14:47:30', '2022-07-28 14:49:35');
+INSERT INTO `accounts` VALUES (3, 0, 0, '3.png', 'alireza', 'rezaei', 'mamad', NULL, 'reza@gmail.com', '2022-07-10', '1', 'fbb', 'vxcbcvnb', 'xbncb', '2022-07-03 14:47:35', '2022-07-04 14:49:31');
+INSERT INTO `accounts` VALUES (4, 0, 0, '4.png', 'ahmad', 'alinia', 'arya', NULL, 'ali1@gmail.com', '2022-06-30', '1', 'fb', 'vcbcb', 'xbnvc', '2022-07-19 14:47:40', '2022-07-19 14:49:24');
+INSERT INTO `accounts` VALUES (5, 0, 0, '5.png', 'hassan', 'hassani', 'parsaaaa', NULL, 'kami@yahoo.com', '2022-07-05', '1', 'bxcb', 'xvcv b', 'vn', '2022-07-22 14:47:46', '2022-07-10 14:49:19');
 INSERT INTO `accounts` VALUES (6, 0, 0, NULL, 'aa', 'bb', 'arta', NULL, 'kkkk@gmail.com', '2022-11-23', '1', 'dbxcb', 'bxf', 'uuyhbjg', '2022-07-30 14:47:49', '2022-07-11 14:49:15');
 INSERT INTO `accounts` VALUES (7, 0, 0, NULL, 'aaa', 'qqqq', 'pourya', NULL, 'kjh@gmail.com', '2022-01-05', '1', 'dxbbxcb', 'vcbvb', 'rehtnr', '2022-07-24 14:47:54', '2022-07-23 14:49:12');
 INSERT INTO `accounts` VALUES (8, 0, 0, NULL, 'DLCSN, ', 'ADJCBNL', 'majid', NULL, 'kami@gmail.com', '2022-07-16', '1', 'bbx ', 'vcxbv', 'thsdndnhd', '2022-07-23 14:47:58', '2022-07-10 14:49:08');
-INSERT INTO `accounts` VALUES (9, 0, 0, NULL, 'DCLJN', 'SDCKN', 'nilofar', NULL, 'kami@mail.com', '2022-07-10', '1', 'cbxc b', 'vcv bx', 'gnfxhm', '2022-07-16 14:48:02', '2022-07-23 14:49:04');
-INSERT INTO `accounts` VALUES (10, 0, 0, NULL, 'parsa', 'ecwv', 'parsa', '', 'parsa@gmail.com', '1970-01-01', '1', 'who is your first school teacher?', 'fathi', 'assdc', '2022-06-07 11:00:18', '2022-06-07 11:00:15');
-INSERT INTO `accounts` VALUES (11, 0, 0, NULL, 'safsghdg', 'esgdgf', 'atena', NULL, 'dsfdbgnmjh.gamil', '2022-07-23', '1', 'ccb', 'hdgjh,bj', 'xnjmku', '2022-07-10 14:48:07', '2022-07-19 14:49:00');
-INSERT INTO `accounts` VALUES (12, 0, 0, NULL, '11111', '11111', 'fatemeh', NULL, 'kami@hotmail.com', '2022-07-04', '1', 'xcbfb', 'fcgn', 'xfgnfmj', '2022-07-17 14:48:11', '2022-07-19 14:48:46');
-INSERT INTO `accounts` VALUES (13, 0, 0, NULL, 'DSLMD', ';dlcmklsn', 'melika', NULL, 'qef.gamil.com', '2022-07-08', '1', 'dxbxc xcb', 'cxcv', 'urtjyk', '2022-07-30 14:48:15', '2022-07-22 14:48:51');
-INSERT INTO `accounts` VALUES (14, 0, 0, NULL, '231', '321', '32p1', '321', '321', '2022-07-20', '1', 'xcb xc ', 'xbccvn', 'dfnxgm', '2022-07-17 14:48:18', '0000-00-00 00:00:00');
-INSERT INTO `accounts` VALUES (15, 0, 0, NULL, '1321', '321', '11111', '321', '321', '2022-07-01', '1', 'xc xcbdb', 'zvdbxn', 'fdngf,', '2022-07-23 14:48:26', '2022-07-20 14:48:55');
+INSERT INTO `accounts` VALUES (9, 0, 0, '', 'DCLJN', 'SDCKN', 'nilofar', NULL, 'kami@mail.com', '2022-07-10', '1', 'cbxc b', 'vcv bx', 'gnfxhm', '2022-07-16 14:48:02', '2022-07-23 14:49:04');
+INSERT INTO `accounts` VALUES (10, 0, 0, '340840270001200.png', 'parsa', 'ecwv', 'parsa', '', 'parsa@gmail.com', '1970-01-01', '1', 'who is your first school teacher?', 'fathi', 'assdc', '2022-06-07 11:00:18', '2022-06-07 11:00:15');
+INSERT INTO `accounts` VALUES (11, 0, 0, '6.png', 'safsghdg', 'esgdgf', 'atena', NULL, 'dsfdbgnmjh.gamil', '2022-07-23', '1', 'ccb', 'hdgjh,bj', 'xnjmku', '2022-07-10 14:48:07', '2022-07-19 14:49:00');
+INSERT INTO `accounts` VALUES (12, 0, 0, '7.png', '11111', '11111', 'fatemeh', NULL, 'kami@hotmail.com', '2022-07-04', '1', 'xcbfb', 'fcgn', 'xfgnfmj', '2022-07-17 14:48:11', '2022-07-19 14:48:46');
+INSERT INTO `accounts` VALUES (13, 0, 0, '8.png', 'DSLMD', ';dlcmklsn', 'melika', NULL, 'qef.gamil.com', '2022-07-08', '1', 'dxbxc xcb', 'cxcv', 'urtjyk', '2022-07-30 14:48:15', '2022-07-22 14:48:51');
+INSERT INTO `accounts` VALUES (14, 0, 0, '9.png', '231', '321', '32p1', '321', '321', '2022-07-20', '1', 'xcb xc ', 'xbccvn', 'dfnxgm', '2022-07-17 14:48:18', '0000-00-00 00:00:00');
+INSERT INTO `accounts` VALUES (15, 0, 0, '10.png', '1321', '321', '11111', '321', '321', '2022-07-01', '1', 'xc xcbdb', 'zvdbxn', 'fdngf,', '2022-07-23 14:48:26', '2022-07-20 14:48:55');
 INSERT INTO `accounts` VALUES (16, 0, 0, NULL, 'ehsan', 'farahani', 'asdfg', NULL, 'SDVfdbg', '2022-08-09', 'asdfgj', NULL, NULL, NULL, NULL, '2022-07-23 08:24:02');
 INSERT INTO `accounts` VALUES (17, 0, 0, NULL, 'aa', 'aa', 'aaaaaaaa', NULL, 'qqqqqq', '2022-08-18', '123456', 'null', 'null', NULL, NULL, '2022-07-26 11:25:10');
 INSERT INTO `accounts` VALUES (23, 0, 0, NULL, 'vdasdv', 'sdvzsdv', 'sdvSDv', NULL, '@', '2022-08-23', 'sdvzdsdv', 'null', 'null', NULL, NULL, '2022-07-30 11:11:51');
@@ -73,6 +73,8 @@ INSERT INTO `accounts` VALUES (30, 0, 0, NULL, 'qq', 'qq', 'qqqqq', NULL, '111@q
 INSERT INTO `accounts` VALUES (31, 0, 0, NULL, 'qq', 'qq', 'qqqq', NULL, '11@qqqqq', '2022-08-03', '111111', 'null', 'null', NULL, NULL, '2022-08-03 13:38:12');
 INSERT INTO `accounts` VALUES (32, 0, 0, NULL, 'ww', 'ww', 'wwww', NULL, 'ww@ww', '2022-08-03', 'wwwwww', 'null', 'null', NULL, NULL, '2022-08-03 13:41:31');
 INSERT INTO `accounts` VALUES (33, 0, 0, NULL, 'a', 'b', 'c', NULL, 'reza@gmail.com', '2022-08-04', '123456', 'null', 'null', NULL, NULL, '2022-08-04 09:53:46');
+INSERT INTO `accounts` VALUES (34, 0, 0, '', 'vv', 'vv', 'vv', NULL, 'vv@', '2022-08-06', 'vvvvvv', 'null', 'null', NULL, NULL, '2022-08-06 12:07:28');
+INSERT INTO `accounts` VALUES (35, 0, 0, '324222493488700.jpg', 'kk', 'kk', 'kk', NULL, 'kk@', '2022-08-06', 'kkkkkk', 'null', 'null', NULL, NULL, '2022-08-06 12:08:49');
 
 -- ----------------------------
 -- Table structure for blocks
@@ -84,14 +86,15 @@ CREATE TABLE `blocks`  (
   `blocked_id` int NULL DEFAULT NULL,
   `blocked_at` datetime NULL DEFAULT current_timestamp,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 18 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of blocks
 -- ----------------------------
 INSERT INTO `blocks` VALUES (13, 10, 11, '2022-08-02 13:33:33');
 INSERT INTO `blocks` VALUES (14, 10, 12, '2022-08-02 13:33:34');
-INSERT INTO `blocks` VALUES (15, 10, 13, '2022-08-02 13:33:37');
+INSERT INTO `blocks` VALUES (16, 10, 4, '2022-08-06 11:18:20');
+INSERT INTO `blocks` VALUES (17, 10, 1, '2022-08-06 11:18:25');
 
 -- ----------------------------
 -- Table structure for business_faq
@@ -176,7 +179,7 @@ CREATE TABLE `comments`  (
   `media` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `sent_at` datetime NULL DEFAULT current_timestamp,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 43 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of comments
@@ -188,6 +191,23 @@ INSERT INTO `comments` VALUES (16, 10, 15, 15, 'asdv', NULL, '2022-08-01 15:31:5
 INSERT INTO `comments` VALUES (23, 1, 9, NULL, 'aaa', NULL, '2022-08-04 13:26:42');
 INSERT INTO `comments` VALUES (24, 2, 9, NULL, 'bbb', NULL, '2022-08-04 13:26:43');
 INSERT INTO `comments` VALUES (25, 3, 9, NULL, 'ccc', NULL, '2022-08-04 13:26:45');
+INSERT INTO `comments` VALUES (26, 4, 9, NULL, 'ryh', NULL, '2022-08-06 18:16:06');
+INSERT INTO `comments` VALUES (27, 5, 9, NULL, 'e5y', NULL, '2022-08-06 18:16:10');
+INSERT INTO `comments` VALUES (28, 6, 9, NULL, 'e4', NULL, '2022-08-06 18:16:14');
+INSERT INTO `comments` VALUES (29, 7, 9, NULL, 'sety456u5', NULL, '2022-08-06 18:16:14');
+INSERT INTO `comments` VALUES (30, 8, 9, NULL, 'w5uye56iu', NULL, '2022-08-06 18:16:14');
+INSERT INTO `comments` VALUES (31, 9, 9, NULL, '347ej', NULL, '2022-08-06 18:16:15');
+INSERT INTO `comments` VALUES (32, 10, 9, NULL, '45uerg', NULL, '2022-08-06 18:16:15');
+INSERT INTO `comments` VALUES (33, 11, 9, NULL, 'wterg', NULL, '2022-08-06 18:16:15');
+INSERT INTO `comments` VALUES (34, 12, 9, NULL, '34y6679', NULL, '2022-08-06 18:16:16');
+INSERT INTO `comments` VALUES (35, 13, 9, NULL, 'rtyw6', NULL, '2022-08-06 18:16:16');
+INSERT INTO `comments` VALUES (36, 14, 9, NULL, 'io67i', NULL, '2022-08-06 18:16:16');
+INSERT INTO `comments` VALUES (37, 15, 9, NULL, 'q34t45', NULL, '2022-08-06 18:16:17');
+INSERT INTO `comments` VALUES (38, 5, 9, NULL, 'r6ir8o', NULL, '2022-08-06 18:16:17');
+INSERT INTO `comments` VALUES (39, 4, 9, NULL, '346w5y', NULL, '2022-08-06 18:16:17');
+INSERT INTO `comments` VALUES (40, 3, 9, NULL, '865', NULL, '2022-08-06 18:16:17');
+INSERT INTO `comments` VALUES (41, 1, 9, NULL, 'q34657', NULL, '2022-08-06 18:16:17');
+INSERT INTO `comments` VALUES (42, 2, 9, NULL, '6ir6u8', NULL, '2022-08-06 18:16:19');
 
 -- ----------------------------
 -- Table structure for followings
@@ -199,108 +219,28 @@ CREATE TABLE `followings`  (
   `followed_id` int NULL DEFAULT NULL,
   `followed_at` datetime NULL DEFAULT current_timestamp,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 142 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 189 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of followings
 -- ----------------------------
-INSERT INTO `followings` VALUES (4, 1, 4, '2022-07-27 13:02:26');
-INSERT INTO `followings` VALUES (5, 2, 4, '2022-07-27 13:02:38');
-INSERT INTO `followings` VALUES (6, 3, 5, '2022-07-27 13:02:53');
-INSERT INTO `followings` VALUES (7, 6, 1, '2022-07-27 13:03:05');
-INSERT INTO `followings` VALUES (8, 6, 2, '2022-07-27 13:03:11');
-INSERT INTO `followings` VALUES (9, 7, 1, '2022-07-27 13:03:24');
-INSERT INTO `followings` VALUES (43, 4, 10, '2022-07-31 14:52:39');
-INSERT INTO `followings` VALUES (46, 1, 10, '2022-08-01 17:38:44');
-INSERT INTO `followings` VALUES (47, 2, 10, '2022-08-01 17:38:55');
-INSERT INTO `followings` VALUES (48, 3, 10, '2022-08-01 17:39:20');
-INSERT INTO `followings` VALUES (55, 10, 1, '2022-08-02 11:32:17');
-INSERT INTO `followings` VALUES (56, 10, 2, '2022-08-02 11:32:20');
-INSERT INTO `followings` VALUES (57, 10, 3, '2022-08-02 11:32:23');
-INSERT INTO `followings` VALUES (58, 10, 4, '2022-08-02 11:32:25');
-INSERT INTO `followings` VALUES (59, 1, 10, '2022-08-02 14:36:33');
-INSERT INTO `followings` VALUES (60, 2, 10, '2022-08-02 14:36:35');
-INSERT INTO `followings` VALUES (61, 3, 10, '2022-08-02 14:36:36');
-INSERT INTO `followings` VALUES (62, 4, 10, '2022-08-02 14:36:37');
-INSERT INTO `followings` VALUES (63, 5, 10, '2022-08-02 14:36:38');
-INSERT INTO `followings` VALUES (64, 10, 6, '2022-08-02 14:36:41');
-INSERT INTO `followings` VALUES (65, 10, 7, '2022-08-02 14:36:42');
-INSERT INTO `followings` VALUES (66, 10, 8, '2022-08-02 14:36:43');
-INSERT INTO `followings` VALUES (67, 10, 9, '2022-08-02 14:36:43');
-INSERT INTO `followings` VALUES (68, 10, 11, '2022-08-02 14:36:44');
-INSERT INTO `followings` VALUES (69, 10, 12, '2022-08-02 14:36:48');
-INSERT INTO `followings` VALUES (70, 7, 5, '2022-08-02 14:37:29');
-INSERT INTO `followings` VALUES (71, 8, 5, '2022-08-02 14:37:34');
-INSERT INTO `followings` VALUES (72, 9, 5, '2022-08-02 14:37:42');
-INSERT INTO `followings` VALUES (73, 10, 5, '2022-08-03 10:38:15');
-INSERT INTO `followings` VALUES (74, 10, 5, '2022-08-03 10:38:15');
-INSERT INTO `followings` VALUES (75, 2, 10, '2022-08-05 17:49:36');
-INSERT INTO `followings` VALUES (76, 2, 10, '2022-08-05 17:49:37');
-INSERT INTO `followings` VALUES (77, 2, 10, '2022-08-05 17:49:42');
-INSERT INTO `followings` VALUES (78, 2, 10, '2022-08-05 17:49:42');
-INSERT INTO `followings` VALUES (79, 2, 10, '2022-08-05 17:49:43');
-INSERT INTO `followings` VALUES (80, 2, 10, '2022-08-05 17:49:43');
-INSERT INTO `followings` VALUES (81, 2, 10, '2022-08-05 17:49:44');
-INSERT INTO `followings` VALUES (82, 2, 10, '2022-08-05 17:49:44');
-INSERT INTO `followings` VALUES (83, 2, 10, '2022-08-05 17:49:45');
-INSERT INTO `followings` VALUES (84, 2, 10, '2022-08-05 17:49:45');
-INSERT INTO `followings` VALUES (85, 2, 10, '2022-08-05 17:49:46');
-INSERT INTO `followings` VALUES (86, 2, 10, '2022-08-05 17:49:46');
-INSERT INTO `followings` VALUES (87, 2, 10, '2022-08-05 17:49:46');
-INSERT INTO `followings` VALUES (88, 2, 10, '2022-08-05 17:49:46');
-INSERT INTO `followings` VALUES (89, 2, 10, '2022-08-05 17:49:47');
-INSERT INTO `followings` VALUES (90, 2, 10, '2022-08-05 17:49:47');
-INSERT INTO `followings` VALUES (91, 2, 10, '2022-08-05 17:49:55');
-INSERT INTO `followings` VALUES (92, 2, 10, '2022-08-05 17:49:55');
-INSERT INTO `followings` VALUES (93, 2, 10, '2022-08-05 17:49:56');
-INSERT INTO `followings` VALUES (94, 2, 10, '2022-08-05 17:49:56');
-INSERT INTO `followings` VALUES (95, 2, 10, '2022-08-05 17:49:57');
-INSERT INTO `followings` VALUES (96, 2, 10, '2022-08-05 17:49:57');
-INSERT INTO `followings` VALUES (97, 2, 10, '2022-08-05 17:49:57');
-INSERT INTO `followings` VALUES (98, 2, 10, '2022-08-05 17:49:57');
-INSERT INTO `followings` VALUES (99, 2, 10, '2022-08-05 17:49:59');
-INSERT INTO `followings` VALUES (100, 2, 10, '2022-08-05 17:49:59');
-INSERT INTO `followings` VALUES (101, 2, 10, '2022-08-05 17:50:00');
-INSERT INTO `followings` VALUES (102, 2, 10, '2022-08-05 17:50:00');
-INSERT INTO `followings` VALUES (103, 2, 10, '2022-08-05 17:50:01');
-INSERT INTO `followings` VALUES (104, 2, 10, '2022-08-05 17:50:01');
-INSERT INTO `followings` VALUES (105, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (106, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (107, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (108, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (109, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (110, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (111, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (112, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (113, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (114, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (115, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (116, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (117, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (118, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (119, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (120, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (121, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (122, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (123, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (124, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (125, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (126, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (127, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (128, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (129, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (130, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (131, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (132, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (133, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (134, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (135, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (136, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (137, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (138, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (139, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (140, 10, 2, '2022-08-05 17:58:26');
-INSERT INTO `followings` VALUES (141, 10, 2, '2022-08-05 17:58:26');
+INSERT INTO `followings` VALUES (168, 10, 1, '2022-08-06 11:30:09');
+INSERT INTO `followings` VALUES (169, 10, 2, '2022-08-06 11:30:10');
+INSERT INTO `followings` VALUES (170, 10, 3, '2022-08-06 11:30:12');
+INSERT INTO `followings` VALUES (171, 10, 4, '2022-08-06 11:30:13');
+INSERT INTO `followings` VALUES (172, 10, 5, '2022-08-06 11:30:16');
+INSERT INTO `followings` VALUES (173, 1, 10, '2022-08-06 11:30:21');
+INSERT INTO `followings` VALUES (174, 2, 10, '2022-08-06 11:30:21');
+INSERT INTO `followings` VALUES (175, 3, 10, '2022-08-06 11:30:22');
+INSERT INTO `followings` VALUES (176, 4, 10, '2022-08-06 11:30:22');
+INSERT INTO `followings` VALUES (177, 5, 10, '2022-08-06 11:30:24');
+INSERT INTO `followings` VALUES (178, 6, 10, '2022-08-06 11:30:34');
+INSERT INTO `followings` VALUES (179, 7, 10, '2022-08-06 11:30:34');
+INSERT INTO `followings` VALUES (180, 8, 10, '2022-08-06 11:30:35');
+INSERT INTO `followings` VALUES (181, 9, 10, '2022-08-06 11:30:36');
+INSERT INTO `followings` VALUES (182, 10, 11, '2022-08-06 11:30:47');
+INSERT INTO `followings` VALUES (187, 10, 6, '2022-08-06 11:38:26');
+INSERT INTO `followings` VALUES (188, 10, 7, '2022-08-06 11:39:55');
 
 -- ----------------------------
 -- Table structure for group_members
@@ -314,7 +254,7 @@ CREATE TABLE `group_members`  (
   `joined_at` datetime NULL DEFAULT current_timestamp,
   `is_admin` bit(1) NULL DEFAULT b'0',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 68 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 75 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of group_members
@@ -340,6 +280,13 @@ INSERT INTO `group_members` VALUES (64, 19, 9, 'a', '2022-08-04 12:29:25', b'0')
 INSERT INTO `group_members` VALUES (65, 19, 10, 'a', '2022-08-04 12:29:27', b'0');
 INSERT INTO `group_members` VALUES (66, 19, 11, 'a', '2022-08-04 12:29:28', b'0');
 INSERT INTO `group_members` VALUES (67, 19, 12, 'a', '2022-08-04 12:29:30', b'0');
+INSERT INTO `group_members` VALUES (68, 24, 10, NULL, '2022-08-06 11:43:48', b'0');
+INSERT INTO `group_members` VALUES (69, 25, 10, NULL, '2022-08-06 11:44:26', b'0');
+INSERT INTO `group_members` VALUES (70, 24, 1, NULL, '2022-08-06 13:08:32', b'0');
+INSERT INTO `group_members` VALUES (71, 24, 2, NULL, '2022-08-06 13:08:38', b'0');
+INSERT INTO `group_members` VALUES (72, 24, 3, NULL, '2022-08-06 13:08:39', b'0');
+INSERT INTO `group_members` VALUES (73, 24, 4, NULL, '2022-08-06 13:08:47', b'0');
+INSERT INTO `group_members` VALUES (74, 24, 5, NULL, '2022-08-06 13:08:52', b'0');
 
 -- ----------------------------
 -- Table structure for group_messages
@@ -358,7 +305,7 @@ CREATE TABLE `group_messages`  (
   `edited` int NULL DEFAULT NULL,
   `sent_at` datetime NULL DEFAULT current_timestamp,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 49 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 61 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of group_messages
@@ -391,6 +338,18 @@ INSERT INTO `group_messages` VALUES (45, 18, 10, NULL, NULL, NULL, 'dsfdsfsdfds'
 INSERT INTO `group_messages` VALUES (46, 18, 10, NULL, NULL, NULL, 'uyytyy', NULL, NULL, NULL, '2022-08-04 12:41:15');
 INSERT INTO `group_messages` VALUES (47, 18, 10, NULL, NULL, NULL, 'yuyuyuyy', NULL, NULL, NULL, '2022-08-04 12:41:17');
 INSERT INTO `group_messages` VALUES (48, 18, 10, NULL, NULL, NULL, 'yuyuyuu', NULL, NULL, NULL, '2022-08-04 12:41:18');
+INSERT INTO `group_messages` VALUES (49, 24, 10, NULL, NULL, NULL, 'rthsb', NULL, NULL, NULL, '2022-08-06 13:09:13');
+INSERT INTO `group_messages` VALUES (50, 24, 1, NULL, NULL, NULL, 'serrgserg', NULL, NULL, NULL, '2022-08-06 13:09:14');
+INSERT INTO `group_messages` VALUES (51, 24, 2, NULL, NULL, NULL, 'er5erg', NULL, NULL, NULL, '2022-08-06 13:09:15');
+INSERT INTO `group_messages` VALUES (52, 24, 2, NULL, NULL, NULL, 'werhgserg', NULL, NULL, NULL, '2022-08-06 13:09:17');
+INSERT INTO `group_messages` VALUES (53, 24, 3, NULL, NULL, NULL, 'awrt4y', NULL, NULL, NULL, '2022-08-06 13:09:18');
+INSERT INTO `group_messages` VALUES (54, 24, 4, NULL, NULL, NULL, 'awrghsg', NULL, NULL, NULL, '2022-08-06 13:09:20');
+INSERT INTO `group_messages` VALUES (55, 24, 5, NULL, NULL, NULL, 'erhsreg', NULL, NULL, NULL, '2022-08-06 13:09:22');
+INSERT INTO `group_messages` VALUES (56, 24, 10, NULL, NULL, NULL, 'strhseg', NULL, NULL, NULL, '2022-08-06 13:09:37');
+INSERT INTO `group_messages` VALUES (57, 24, 1, NULL, NULL, NULL, 'etrhsg', NULL, NULL, NULL, '2022-08-06 13:09:38');
+INSERT INTO `group_messages` VALUES (58, 24, 4, NULL, NULL, NULL, 'rgsg', NULL, NULL, NULL, '2022-08-06 13:09:39');
+INSERT INTO `group_messages` VALUES (59, 24, 5, NULL, NULL, NULL, 'etryjrth', NULL, NULL, NULL, '2022-08-06 13:09:40');
+INSERT INTO `group_messages` VALUES (60, 24, 3, NULL, NULL, NULL, 'WRGH', NULL, NULL, NULL, '2022-08-06 13:09:42');
 
 -- ----------------------------
 -- Table structure for groups
@@ -405,7 +364,7 @@ CREATE TABLE `groups`  (
   `link` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `created_at` datetime NULL DEFAULT current_timestamp,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of groups
@@ -413,13 +372,15 @@ CREATE TABLE `groups`  (
 INSERT INTO `groups` VALUES (2, 8, 'group 2', 'group 2', '2.jpg', NULL, '2022-06-07 10:18:45');
 INSERT INTO `groups` VALUES (5, 3, 'group 5', 'group 5', '5.jpg', NULL, '2022-06-07 10:18:45');
 INSERT INTO `groups` VALUES (7, 10, 'g2', 'g2', 'g2', 'g2', '2022-06-09 08:57:17');
-INSERT INTO `groups` VALUES (8, 10, 'g3', 'g3', 'g3', 'g3', '2022-06-09 08:58:05');
+INSERT INTO `groups` VALUES (8, 10, 'g3', 'g3', '340810571331300.png', 'null', '2022-06-09 08:58:05');
 INSERT INTO `groups` VALUES (10, 10, 'g5', 'g5', 'g5', 'g5', '2022-06-09 09:02:37');
 INSERT INTO `groups` VALUES (11, 10, 'g6', 'g6', 'g6', 'g6', '2022-06-09 09:03:52');
 INSERT INTO `groups` VALUES (12, 10, 'g7', 'g7', 'g7', 'g7', '2022-06-09 09:28:24');
 INSERT INTO `groups` VALUES (13, 10, 'g10', 'g10', 'g10', 'g10', '2022-06-16 09:03:41');
 INSERT INTO `groups` VALUES (18, 10, 'g11', 'g11bio', 'g11pic', 'g11link', '2022-08-04 12:27:52');
 INSERT INTO `groups` VALUES (19, 3, 'g12', 'g12bio', 'g12pic', 'g12link', '2022-08-04 12:28:11');
+INSERT INTO `groups` VALUES (24, 10, 'ddd', 'dd', '340804148733100.png', 'null', '2022-08-06 11:43:48');
+INSERT INTO `groups` VALUES (25, 10, 'mmm', 'mm', '332618281338700.jpg', 'null', '2022-08-06 11:44:26');
 
 -- ----------------------------
 -- Table structure for humen
@@ -454,38 +415,38 @@ CREATE TABLE `posts`  (
 -- ----------------------------
 -- Records of posts
 -- ----------------------------
-INSERT INTO `posts` VALUES (9, 10, 'adsghd', 'c://:test/1.jpg', '2022-06-16 14:16:26');
-INSERT INTO `posts` VALUES (10, 10, 'post 6', '', '2022-06-20 14:16:29');
-INSERT INTO `posts` VALUES (12, 10, 'post 8', 'c://:test/1.jpg', '2022-06-18 14:16:35');
-INSERT INTO `posts` VALUES (15, 2, 'wdaes', '', '2022-05-29 14:16:40');
-INSERT INTO `posts` VALUES (16, 2, 'others test post 1', '', '2022-06-15 14:16:22');
-INSERT INTO `posts` VALUES (21, 2, 'egrhtjf', '', '2022-06-09 09:47:52');
-INSERT INTO `posts` VALUES (22, 2, 'afesgrhd', '', '2022-06-09 09:47:54');
-INSERT INTO `posts` VALUES (23, 2, 'safvdbgf', '', '2022-06-09 09:47:58');
-INSERT INTO `posts` VALUES (24, 2, 'fasdgfgn', '', '2022-06-09 09:48:03');
-INSERT INTO `posts` VALUES (25, 2, 'safdgfhg', '', '2022-06-09 09:48:05');
-INSERT INTO `posts` VALUES (26, 11, 'sczvdxbfg', '', '2022-06-09 09:48:06');
-INSERT INTO `posts` VALUES (27, 11, 'CSzvdxbf', '', '2022-06-09 09:48:06');
-INSERT INTO `posts` VALUES (28, 11, 'sdfdgf', '', '2022-06-09 09:48:07');
-INSERT INTO `posts` VALUES (29, 11, 'xc', '', '2022-06-09 09:48:08');
-INSERT INTO `posts` VALUES (30, 11, 'dvsbgfd', '', '2022-06-09 09:48:10');
-INSERT INTO `posts` VALUES (31, 13, 'sdb', 'regsfvreg', '2022-06-09 09:48:11');
-INSERT INTO `posts` VALUES (32, 13, 'afesgr', 'ncgn', '2022-06-09 09:48:11');
-INSERT INTO `posts` VALUES (33, 13, 'fegr', 'dfgn', '2022-06-09 09:48:12');
-INSERT INTO `posts` VALUES (34, 13, 'fesgr', 'dfbs', '2022-06-09 09:48:12');
-INSERT INTO `posts` VALUES (35, 13, 'aesrhdr', 'dfbberr', '2022-06-09 09:48:13');
-INSERT INTO `posts` VALUES (36, 13, 'SEy', 'srvsrger', '2022-06-09 09:48:22');
-INSERT INTO `posts` VALUES (43, 10, 'dfvzsdv', 'null', '2022-08-02 15:14:25');
-INSERT INTO `posts` VALUES (44, 10, 'ghjbkn', 'c://:test/1.png', '2022-08-02 15:42:25');
-INSERT INTO `posts` VALUES (45, 10, 'ghvjbn,', 'c://:test/2.jpg', '2022-08-02 15:42:27');
-INSERT INTO `posts` VALUES (46, 10, 'po;ljhkj', 'c://:test/3.jpeg', '2022-08-02 15:42:28');
-INSERT INTO `posts` VALUES (47, 10, 'tdxfcghv', 'c://:test/4.png', '2022-08-02 15:42:30');
-INSERT INTO `posts` VALUES (48, 10, '1.jpg', 'sdfsdf', '2022-08-03 12:21:13');
-INSERT INTO `posts` VALUES (49, 10, '2.jpg', 'fdfdsfsd', '2022-08-03 12:30:25');
-INSERT INTO `posts` VALUES (50, 10, 'ddddddd', '1.jpg', '2022-08-03 12:34:42');
-INSERT INTO `posts` VALUES (51, 10, '222222222', '333.png', '2022-08-03 12:34:57');
-INSERT INTO `posts` VALUES (54, 10, 'sdsfds', '9507362357700.png', '2022-08-05 18:46:56');
-INSERT INTO `posts` VALUES (55, 10, 'xcvxcvc', '9799619507800.png', '2022-08-05 18:51:48');
+INSERT INTO `posts` VALUES (9, 10, 'adsghd', '1.jpg', '2022-06-16 14:16:26');
+INSERT INTO `posts` VALUES (10, 10, 'post 6', '2.jpg', '2022-06-20 14:16:29');
+INSERT INTO `posts` VALUES (12, 10, 'post 8', '3.jpg', '2022-06-18 14:16:35');
+INSERT INTO `posts` VALUES (15, 2, 'wdaes', '4.jpg', '2022-05-29 14:16:40');
+INSERT INTO `posts` VALUES (16, 2, 'others test post 1', '5.jpg', '2022-06-15 14:16:22');
+INSERT INTO `posts` VALUES (21, 2, 'egrhtjf', '6.jpg', '2022-06-09 09:47:52');
+INSERT INTO `posts` VALUES (22, 2, 'afesgrhd', '7.jpg', '2022-06-09 09:47:54');
+INSERT INTO `posts` VALUES (23, 2, 'safvdbgf', '8.jpg', '2022-06-09 09:47:58');
+INSERT INTO `posts` VALUES (24, 2, 'fasdgfgn', '9.jpg', '2022-06-09 09:48:03');
+INSERT INTO `posts` VALUES (25, 2, 'safdgfhg', '10.jpg', '2022-06-09 09:48:05');
+INSERT INTO `posts` VALUES (26, 11, 'sczvdxbfg', '11.jpg', '2022-06-09 09:48:06');
+INSERT INTO `posts` VALUES (27, 11, 'CSzvdxbf', '12.jpg', '2022-06-09 09:48:06');
+INSERT INTO `posts` VALUES (28, 11, 'sdfdgf', '13.jpg', '2022-06-09 09:48:07');
+INSERT INTO `posts` VALUES (29, 11, 'xc', '14.jpg', '2022-06-09 09:48:08');
+INSERT INTO `posts` VALUES (30, 11, 'dvsbgfd', '15.jpg', '2022-06-09 09:48:10');
+INSERT INTO `posts` VALUES (31, 13, 'sdb', '16.jpg', '2022-06-09 09:48:11');
+INSERT INTO `posts` VALUES (32, 13, 'afesgr', '17.jpg', '2022-06-09 09:48:11');
+INSERT INTO `posts` VALUES (33, 13, 'fegr', '18.jpg', '2022-06-09 09:48:12');
+INSERT INTO `posts` VALUES (34, 13, 'fesgr', '19.jpg', '2022-06-09 09:48:12');
+INSERT INTO `posts` VALUES (35, 13, 'aesrhdr', '20.jpg', '2022-06-09 09:48:13');
+INSERT INTO `posts` VALUES (36, 13, 'SEy', '1.jpg', '2022-06-09 09:48:22');
+INSERT INTO `posts` VALUES (43, 10, 'dfvzsdv', '2.jpg', '2022-08-02 15:14:25');
+INSERT INTO `posts` VALUES (44, 10, 'ghjbkn', '3.jpg', '2022-08-02 15:42:25');
+INSERT INTO `posts` VALUES (45, 10, 'ghvjbn,', '4.jpg', '2022-08-02 15:42:27');
+INSERT INTO `posts` VALUES (46, 10, 'po;ljhkj', '5.jpg', '2022-08-02 15:42:28');
+INSERT INTO `posts` VALUES (47, 10, 'tdxfcghv', '6.jpg', '2022-08-02 15:42:30');
+INSERT INTO `posts` VALUES (48, 10, '1.jpg', '7.jpg', '2022-08-03 12:21:13');
+INSERT INTO `posts` VALUES (49, 10, '2.jpg', '8.jpg', '2022-08-03 12:30:25');
+INSERT INTO `posts` VALUES (50, 10, 'ddddddd', '9.jpg', '2022-08-03 12:34:42');
+INSERT INTO `posts` VALUES (51, 10, '222222222', '10.jpg', '2022-08-03 12:34:57');
+INSERT INTO `posts` VALUES (54, 10, 'sdsfds', '11.jpg', '2022-08-05 18:46:56');
+INSERT INTO `posts` VALUES (55, 10, 'xcvxcvc', '12.jpg', '2022-08-05 18:51:48');
 
 -- ----------------------------
 -- Table structure for private_messages

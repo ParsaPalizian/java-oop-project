@@ -26,14 +26,14 @@ public class FollowingsPanel extends JPanel {
         this.add(scrItems, BorderLayout.CENTER);
 
 
-        for (Follow follow : Globals.currentAccount.getFollowings()) {
+        for (Follow follow : Globals.loggedInAccount.getFollowings()) {
             FollowingItem followingItem=  new FollowingItem(follow,"assets\\profiles\\general.png", follow.getAccount().getUserName(), GuiSetting.selectedTheme.getSecondaryColor(), GuiSetting.selectedTheme.getPrimaryColor());
             followingItem.setAlignmentX(Component.LEFT_ALIGNMENT);
             pnlItems.add(followingItem);
             pnlItems.add(Box.createRigidArea(new Dimension(10, 10)));
         }
 
-        int h = Globals.currentAccount.getFollowings().size() * 42;
+        int h = Globals.loggedInAccount.getFollowings().size() * 42;
         pnlItems.setPreferredSize(new Dimension(600, h));
 
 

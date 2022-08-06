@@ -24,8 +24,8 @@ public class RightGroupMessageItem extends JPanel {
 
         lblMessage = new JLabel(groupMessage.getContent());
 
-        if (FileUtility.isAvatarExists(Globals.currentAccount.getAvatar())) {
-            btnSenderProfilePicture = new ImageButton("assets\\profiles\\" + Globals.currentAccount.getAvatar(), new Dimension(32, 32));
+        if (FileUtility.isAvatarExists(Globals.loggedInAccount.getAvatar())) {
+            btnSenderProfilePicture = new ImageButton("assets\\profiles\\" + Globals.loggedInAccount.getAvatar(), new Dimension(32, 32));
         } else {
             btnSenderProfilePicture = new ImageButton("assets\\profiles\\general0.5x.png", new Dimension(32, 32));
         }

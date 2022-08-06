@@ -23,14 +23,14 @@ public class FollowersPanel extends JPanel {
         scrItems.getVerticalScrollBar().setUnitIncrement(32);
         this.add(scrItems, BorderLayout.CENTER);
 
-        for (Follow follow : Globals.currentAccount.getFollowers()) {
+        for (Follow follow : Globals.loggedInAccount.getFollowers()) {
             FollowerItem followerItem = new FollowerItem(follow,"assets\\profiles\\general.png", follow.getAccount().getUserName(), GuiSetting.selectedTheme.getSecondaryColor(), GuiSetting.selectedTheme.getPrimaryColor());
             followerItem.setAlignmentX(Component.LEFT_ALIGNMENT);
             pnlItems.add(followerItem);
             pnlItems.add(Box.createRigidArea(new Dimension(10, 10)));
         }
 
-        int h = Globals.currentAccount.getFollowers().size() * 42;
+        int h = Globals.loggedInAccount.getFollowers().size() * 42;
         pnlItems.setPreferredSize(new Dimension(600, h));
 
         this.setBounds(100, 100, 400 + this.getInsets().left + this.getInsets().right, 600);

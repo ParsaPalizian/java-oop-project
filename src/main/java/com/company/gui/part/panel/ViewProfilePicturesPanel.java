@@ -7,6 +7,7 @@ import com.company.model.ProfilePicture;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 public class ViewProfilePicturesPanel extends JPanel {
 
@@ -15,7 +16,7 @@ public class ViewProfilePicturesPanel extends JPanel {
 
     JPanel pnlImageAndUtility;
 
-    public ViewProfilePicturesPanel() {
+    public ViewProfilePicturesPanel() throws IOException {
 
         this.setLayout(new BorderLayout());
         pnlImages = new JPanel();
@@ -30,7 +31,7 @@ public class ViewProfilePicturesPanel extends JPanel {
 
         for (ProfilePicture profilePicture : Globals.currentAccount.getProfilePictures()) {
             //todo read caption
-            ImageItem imageItem = new ImageItem(null, "assets\\profiles\\general2x.png", GuiSetting.selectedTheme.getSecondaryColor(), GuiSetting.selectedTheme.getPrimaryColor());
+            ImageItem imageItem = new ImageItem(null, "assets\\profiles\\general2x.png", GuiSetting.selectedTheme.getSecondaryColor(), GuiSetting.selectedTheme.getPrimaryColor(), new Dimension(128,128));
             imageItem.setAlignmentX(Component.LEFT_ALIGNMENT);
             pnlImages.add(imageItem);
             pnlImages.add(Box.createRigidArea(new Dimension(10, 10)));

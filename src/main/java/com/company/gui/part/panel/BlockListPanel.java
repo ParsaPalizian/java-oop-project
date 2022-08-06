@@ -27,7 +27,7 @@ public class BlockListPanel extends JPanel {
         scrItems.getVerticalScrollBar().setUnitIncrement(32);
         this.add(scrItems, BorderLayout.CENTER);
 
-        for (Block block : Globals.currentAccount.getBlocklist()) {
+        for (Block block : Globals.loggedInAccount.getBlocklist()) {
 
             BlockItem blockItem =  new BlockItem(block , "assets\\profiles\\general.png", block.getBlocked().getUserName(), GuiSetting.selectedTheme.getSecondaryColor(), GuiSetting.selectedTheme.getPrimaryColor());
             blockItem.setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -35,7 +35,7 @@ public class BlockListPanel extends JPanel {
             pnlItems.add(Box.createRigidArea(new Dimension(10, 10)));
         }
 
-        int h = Globals.currentAccount.getBlocklist().size() * 42;
+        int h = Globals.loggedInAccount.getBlocklist().size() * 42;
         pnlItems.setPreferredSize(new Dimension(600, h));
 
         this.setBounds(100,100,400 + this.getInsets().left + this.getInsets().right ,600 );

@@ -45,5 +45,9 @@ public class FileUtility {
         return new File("assets\\profiles\\" + fileName).exists();
     }
 
+    public static boolean isPostImage(String fileName) {
+        return new File("assets\\posts\\" + fileName).exists();
+    }
+
 
 }

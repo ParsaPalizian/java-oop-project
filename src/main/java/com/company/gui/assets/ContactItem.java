@@ -42,7 +42,7 @@ public class ContactItem extends JPanel {
                 System.out.println(account.getUserName());
                 if (GuiGlobals.mainFrame.activeCenterPanel instanceof MessagePanel) {
                     Globals.currentPrivateMessages.clear();
-                    for (PrivateMessage privateMessage : Globals.currentAccount.getPrivateMessages()) {
+                    for (PrivateMessage privateMessage : Globals.loggedInAccount.getPrivateMessages()) {
                         if (privateMessage.getReceiver().getId() == account.getId() || privateMessage.getSender().getId() == account.getId()) {
                             Globals.currentPrivateMessages.add(privateMessage);
                         }

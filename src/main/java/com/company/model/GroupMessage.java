@@ -177,11 +177,6 @@ public class GroupMessage  implements Printable, Editable<GroupMessage> {
         );
     }
 
-
-
-
-
-
     public static Result delete(GroupMessage groupMessage) throws SQLException {
         GroupMessageDataAdapter groupMessageDataAdapter=new GroupMessageDataAdapter();
         groupMessageDataAdapter.delete(groupMessage.getId());

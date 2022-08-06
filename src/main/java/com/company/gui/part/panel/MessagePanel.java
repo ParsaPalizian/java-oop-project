@@ -63,14 +63,14 @@ public class MessagePanel extends JPanel {
         this.add(scrContacts, BorderLayout.WEST);
         this.add(pnlMessageAndTypeAndSend, BorderLayout.CENTER);
 
-        for (Account account : Globals.currentAccount.getContacts()) {
+        for (Account account : Globals.loggedInAccount.getContacts()) {
             ContactItem contactItem = new ContactItem(account, "assets\\profiles\\general.png", account.getUserName(), GuiSetting.selectedTheme.getSecondaryColor(), GuiSetting.selectedTheme.getPrimaryColor());
             contactItem.setAlignmentX(Component.LEFT_ALIGNMENT);
             pnlContacts.add(contactItem);
             pnlContacts.add(Box.createRigidArea(new Dimension(10, 10)));
         }
 
-        int h = Globals.currentAccount.getContacts().size() * 42;
+        int h = Globals.loggedInAccount.getContacts().size() * 42;
         pnlContacts.setPreferredSize(new Dimension(150, h));
 
 
@@ -82,11 +82,11 @@ public class MessagePanel extends JPanel {
                     if (selectedContact != null && !txtType.getText().trim().isEmpty()) {
                         PrivateMessage privateMessage = new PrivateMessage();
                         privateMessage.setContent(txtType.getText().trim());
-                        privateMessage.setSender(Globals.currentAccount);
+                        privateMessage.setSender(Globals.loggedInAccount);
                         privateMessage.setReceiver(selectedContact);
                         PrivateMessageDataAdapter adapter = new PrivateMessageDataAdapter();
                         privateMessage = adapter.insert(privateMessage);
-                        Globals.currentAccount.getPrivateMessages().add(privateMessage);
+                        Globals.loggedInAccount.getPrivateMessages().add(privateMessage);
                         Globals.currentPrivateMessages.add(privateMessage);
                         messagesRendered = false;
                         txtType.setText("");
@@ -111,7 +111,7 @@ public class MessagePanel extends JPanel {
                     if (messagesRendered == false) {
                         MessagePanel.this.pnlMessages.removeAll();
                         for (PrivateMessage privateMessage : Globals.currentPrivateMessages) {
-                            if (privateMessage.getSender().getId() == Globals.currentAccount.getId()) {
+                            if (privateMessage.getSender().getId() == Globals.loggedInAccount.getId()) {
                                 RightPrivateMessageItem rightMessageItem = new RightPrivateMessageItem(privateMessage);
                                 pnlMessages.add(rightMessageItem);
                             } else {

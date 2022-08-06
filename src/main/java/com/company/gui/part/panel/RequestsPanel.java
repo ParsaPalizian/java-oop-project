@@ -25,13 +25,13 @@ public class RequestsPanel extends JPanel {
         this.add(scrItems, BorderLayout.CENTER);
 
 
-        for (Request request : Globals.currentAccount.getRequests()) {
+        for (Request request : Globals.loggedInAccount.getRequests()) {
             RequestItem requestItem=  new RequestItem("assets\\profiles\\general.png", request.getFrom().getUserName(), GuiSetting.selectedTheme.getSecondaryColor(), GuiSetting.selectedTheme.getPrimaryColor());
             requestItem.setAlignmentX(Component.LEFT_ALIGNMENT);
             pnlItems.add(requestItem);
             pnlItems.add(Box.createRigidArea(new Dimension(10, 10)));
         }
-        int h = Globals.currentAccount.getRequests().size() * 42;
+        int h = Globals.loggedInAccount.getRequests().size() * 42;
         pnlItems.setPreferredSize(new Dimension(600, h));
 
 

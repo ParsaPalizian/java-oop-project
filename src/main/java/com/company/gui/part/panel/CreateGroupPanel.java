@@ -6,12 +6,18 @@ import com.company.gui.enums.CenterMenuSituation;
 import com.company.gui.enums.TopMenuSituation;
 import com.company.gui.global.GuiGlobals;
 import com.company.model.Account;
+import com.company.model.Follow;
 import com.company.model.Group;
 import com.company.utility.FileUtility;
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.io.File;
 import java.sql.SQLException;
 import java.util.HashSet;
@@ -31,7 +37,11 @@ public class CreateGroupPanel extends JPanel {
     JLabel lblLink;
     JTextField txtLink;
 
+    JPanel pnlAddMember;
+
+
     JButton btnFinish;
+    HashSet<Account> members = new HashSet<>();
 
     public CreateGroupPanel() {
 
@@ -47,6 +57,10 @@ public class CreateGroupPanel extends JPanel {
 
         lblLink = new JLabel("Link");
         txtLink = new JTextField();
+
+        pnlAddMember = new JPanel();
+        pnlAddMember.setLayout(new BorderLayout());
+        pnlAddMember.setBackground(Color.orange);
 
         btnFinish = new JButton("Finish");
 
@@ -65,6 +79,8 @@ public class CreateGroupPanel extends JPanel {
         this.add(txtLink);
 
         this.add(btnFinish);
+
+        this.add(pnlAddMember);
 
 
         lblName.setBounds(25 + this.getInsets().left, 5 + this.getInsets().top, GuiGlobals.TEXT_FIELD_WIDTH, GuiGlobals.TEXT_FIELD_HEIGHT);
@@ -101,7 +117,7 @@ public class CreateGroupPanel extends JPanel {
 
 
                 try {
-                    HashSet<Account> members = new HashSet<>();
+
                     members.add(Globals.currentAccount);
                     Group group = new Group();
                     group.setName(txtName.getText().trim());
@@ -121,6 +137,33 @@ public class CreateGroupPanel extends JPanel {
                 }
             }
         });
+
+        pnlAddMember.setBounds(100 + this.getInsets().left, 155 + this.getInsets().top, 600, 600);
+        JPanel pnlMembers = new JPanel();
+        pnlMembers.setLayout(new BoxLayout(pnlMembers, BoxLayout.Y_AXIS));
+
+        for (Follow follow : Globals.loggedInAccount.getFollowers()) {
+            JCheckBox checkBox = new JCheckBox(follow.getAccount().getUserName());
+            checkBox.addItemListener(new ItemListener() {
+                @Override
+                public void itemStateChanged(ItemEvent e) {
+                    if (e.getStateChange() == 1) {
+                        members.add(follow.getAccount());
+                    } else if (e.getStateChange() == 2){
+                        members.remove(follow.getAccount());
+                    }
+                    System.out.println("MEMEBERS SIZE :" + members.size());
+                }
+            });
+
+            pnlMembers.add(checkBox);
+        }
+
+        pnlMembers.setPreferredSize(new Dimension(500, Globals.loggedInAccount.getFollowers().size() * 24));
+        JScrollPane scrollPane = new JScrollPane(pnlMembers);
+        scrollPane.getVerticalScrollBar().setUnitIncrement(32);
+        scrollPane.setSize(new Dimension(600, 600));
+        pnlAddMember.add(scrollPane, BorderLayout.CENTER);
 
         this.setBounds(100, 100, 500 + this.getInsets().left + this.getInsets().right, 600);
         this.setVisible(true);

@@ -111,18 +111,15 @@ public class CommentDataAdapter {
             dbHelper.connect();
         }
 
-        String sql = "SELECT * FROM " + TABLE_NAME + " " + QueryUtility.createWhereClause(where);
+        String sql = "SELECT comments.* , accounts.id as aid , accounts.username , accounts.avatar FROM " + TABLE_NAME + " INNER JOIN accounts ON comments.sender_id = accounts.id " + QueryUtility.createWhereClause(where);
         ResultSet rs = dbHelper.select(sql);
         CustomArrayList<Comment> comments = new CustomArrayList<>(Comment::new);
         while (rs.next()) {
             Comment comment = new Comment();
             comment.setId(rs.getInt("id"));
             comment.setContent(rs.getString("content"));
+            comment.setSender(new Account(rs.getInt("aid"), rs.getString("username"), rs.getString("avatar")));
             comment.setSentAt(DateUtility.parseStringToLocalDateTime(rs.getString("sent_at")));
-
-            //todo very important match commment to its sender
-            comment.setSender(new Account());
-
             ReactionDataAdapter adapter1 = new ReactionDataAdapter();
             CustomArrayList<Reaction> reactions = adapter1.find("comment", comment.getId());
             comment.setReactions(reactions);
